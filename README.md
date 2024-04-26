@@ -1,6 +1,6 @@
 <h1>Welcome To I-Write.</h1>
 
-<h1><a href="https://i-write-24.netlify.app/">I-Write (Live App)</a></h1>
+<h1><a href="https://i-write-24.netlify.app/ target="_blank">I-Write (Live App)</a></h1>
 
 <h3>I-Write is a MERN Blogging App.</h3>
 
