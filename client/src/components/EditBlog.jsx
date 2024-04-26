@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom'
 import { selectBlogState, updateBlogAsync } from '../features/blogs/blogSlice';
+import Navbar from './Navbar';
 
-const EditBlog = () => {
+const EditBlog = ({user}) => {
     const {blogId} = useParams();
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -19,6 +20,8 @@ const EditBlog = () => {
     };
 
   return (
+    <>
+    <Navbar user={user}/>
     <div className="w-screen h-screen flex justify-center">
       <div className=" my-24 w-[50%] rounded-3xl">
         <h1 className="font-bold text-4xl text-blue-600 mb-6">
@@ -39,6 +42,7 @@ const EditBlog = () => {
         </form>
       </div>
     </div>
+    </>
   )
 }
 

@@ -5,9 +5,16 @@ import { Routes, Route, Link } from "react-router-dom";
 import UserProfile from "../components/UserProfile";
 import illustration from "../assets/undraw_blogging_re_kl0d.svg";
 
-const Home = () => {
+const Home = ({user}) => {
+
+
+  useEffect(()=>{
+
+  },[user])
 
   return (
+    <>
+    <Navbar user={user}/>
     <div className="">
      <div className="flex justify-around mt-24 items-center">
         <div className=" flex flex-col justify-around rounded-lg h-96">
@@ -39,6 +46,7 @@ const Home = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

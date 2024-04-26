@@ -27,14 +27,13 @@ function App() {
 
   return (
     <div className="App ">
-      <Navbar user={user}/>
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/blogs' element={<Blogs setEditing={setEditing}/>} />
+        <Route path='/*' element={<Home user={user}/>} />
+        <Route path='/blogs/*' element={<Blogs setEditing={setEditing}/>} />
         <Route path='/login' element={<Login />} />
         <Route path='/create-blog' element={<BlogForm blog={null}/>} />
         <Route path='/user-profile/:userId' element={<UserProfile user={user}/>} />
-        <Route path='/blogs/edit/:blogId'  element={<EditBlog />}/>
+        <Route path='/blogs/edit/:blogId' element={<EditBlog user={user}/>}/>
       </Routes>
     </div>
   );

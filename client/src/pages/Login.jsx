@@ -5,6 +5,7 @@ import {jwtDecode} from 'jwt-decode';
 import video from '../assets/bg-video.mp4';
 import { useDispatch, useSelector } from 'react-redux';
 import { verifyUserAsync } from '../features/user/userSlice';
+import Navbar from '../components/Navbar';
 
 
 const Login = () => {
@@ -29,6 +30,7 @@ const Login = () => {
 
 
   return (
+    <>
     <div className="flex justify-start items-center flex-col h-screen">
       <div className="relative w-full h-full">
         <video
@@ -50,6 +52,7 @@ const Login = () => {
         </div>
       </div>
     </div>
+    </>
     
   )
 }

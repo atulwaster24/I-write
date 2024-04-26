@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addBlogAsync } from "../features/blogs/blogSlice";
 import { Link, useNavigate } from "react-router-dom";
+import Navbar from "./Navbar";
 
 const BlogForm = ({ blog }) => {
   const [isEditForm, setIsEditForm] = useState(false);
@@ -16,10 +17,13 @@ const BlogForm = ({ blog }) => {
 
   if (!user) {
     return (
+      <>
+    <Navbar user={user}/>
       <div className="flex flex-col gap-6 mt-48">
         <h1 className="text-3xl font-bold">Login to start writing and publishing blogs.</h1>
         <Link className="text-xl hover:text-blue-700 font-bold" to={'/login'}>Go to Login Page.</Link>
       </div>
+      </>
     );
   }
 
@@ -33,6 +37,8 @@ const BlogForm = ({ blog }) => {
   };
 
   return (
+    <>
+    <Navbar user={user}/>
     <div className="w-screen h-screen flex justify-center">
       <div className=" my-24 w-[50%] rounded-3xl">
         <h1 className="font-bold text-4xl text-blue-600 mb-6">
@@ -77,6 +83,7 @@ const BlogForm = ({ blog }) => {
         </form>
       </div>
     </div>
+    </>
   );
 };
 
